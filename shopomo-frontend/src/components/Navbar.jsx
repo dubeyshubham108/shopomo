@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from "../assets/shopomo_logo.png";
 import cart from "../assets/frontend_assets/cart_icon2.png";
 import search_icon from "../assets/frontend_assets/search_icon.png";
@@ -7,10 +7,13 @@ import menu_icon from "../assets/frontend_assets/menu_icon.png";
 import { NavLink, Link } from "react-router-dom";
 import dropdown_icon from "../assets/frontend_assets/dropdown_icon.png";
 import { useState } from "react";
+import { ShopContext } from "../context/ShopContext";
 
 const Navbar = () => {
 
     const [ visible, setVisible ] = useState(false);
+    const { setShowSearch } = useContext(ShopContext);
+
     return (
         <div className="flex items-center justify-between py-5 font-medium">
 
@@ -40,14 +43,14 @@ const Navbar = () => {
             </ul>
 
             <div className="flex item-center gap-6"> 
-                <img src={search_icon} className="w-4 cursor-pointer" alt="Cart icon" />
+                <img onClick={() => setShowSearch(true)} src={search_icon} className="w-4 cursor-pointer" alt="Cart icon" />
                 <div className="group relative">
                     <img className="w-5.5 cursor-pointer" src={profile} alt="Profile icon" />
                     <div className='group-hover:block hidden absolute dropdown-menu right-0 pt-4'>
                         <div className="flex flex-col gap-2 w-36 py-3 px-5 bg-slate-100 text-gray-500 rounded">
                             <p className='cursor-pointer hover:text-black'>My Profile</p>
                             <p className="cursor-pointer hover:text-black">Orders</p>
-                            <p className="cursor-pointer hover:text-black">Logput</p>
+                            <p className="cursor-pointer hover:text-black">Logout</p>
                         </div>
                     </div>
                 </div>
