@@ -1,12 +1,17 @@
 import React from "react";
 import logo from "../assets/shopomo_logo.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
         <div>
         <div className="flex flex-col sm:grid grid-cols-[3fr_1fr_1fr] gap-14 my-10 mt-40 text-sm">
             <div>
-                <img src={logo} className="mb-5 w-32" alt="Logo of Shopomo" />
+                <Link to={'/'}><img src={logo}
+                 className="mb-5 w-32 cursor-pointer"
+                alt="Logo of Shopomo"
+                 />
+                </Link>
                 <p className="w-full md:w-2/3 text-gray-600">
                     Elevating everyday style with timeless luxury.<br/>
                     123 Park Avenue, Suite 500, New York, NY 10022
