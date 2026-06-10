@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { ShopContext } from "../context/ShopContext";
 import Title from "./Title";
 
-// making a change in the cart total component to add the delivery fee and show the total amount including the delivery fee. I will also add a condition to check if the cart amount is zero, in that case, the total will also be zero instead of showing the delivery fee.
+// making a change in the cart total component to add of the delivery fee and show the total amount including the delivery fee. I will also add a condition to check if the cart amount is zero, in that case, the total will also be zero instead of showing the delivery fee.
 const CartTotal = () => {
 
     const { currency, delivery_fee, getCartAmount } = useContext(ShopContext);
